@@ -2,8 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
+import useFavCalls from "../hooks/useFavCalls";
 
 const Character = () => {
+  const { sendFav } = useFavCalls()
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -49,8 +51,11 @@ const Character = () => {
             Mass : {character?.mass?.toUpperCase()}
           </h4>
           <h4 className="nav-link fs-4">Gender : {character?.gender}</h4>
-          <button className=" btn btn-warning" onClick={() => navigate(-1)}>
+          <button className=" btn btn-dark text-warning mx-2" onClick={() =>navigate(-1) }>
             Go Back
+          </button>
+          <button className=" btn btn-warning" onClick={() => sendFav({key:"people", character})}>
+            Add to Favorites
           </button>
         </div>
       )}

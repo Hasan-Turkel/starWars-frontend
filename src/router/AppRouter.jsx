@@ -9,6 +9,7 @@ import Dashboard from "../pages/Dashboard";
 import Planets from "../pages/Planets";
 import Characters from "../pages/Characters";
 import Character from "../pages/Character";
+import Favorites from "../pages/Favorites";
 
 const AppRouter = () => {
   return (
@@ -23,7 +24,7 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="" element={<PrivateRouter />}>
-
+        <Route path="/favorites" element={<Favorites />}/>
         </Route>
       </Routes>
     </Router>

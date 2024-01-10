@@ -19,7 +19,7 @@ const LoginForm = () => {
   });
 
   return (
-    <div className="container auth-form my-5">
+    <div className="container auth-form">
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={loginSchema}
@@ -40,7 +40,7 @@ const LoginForm = () => {
           /* and other goodies */
         }) => (
           <Form onSubmit={handleSubmit}>
-            <label htmlFor="email" className="form-label fw-bolder mt-5">
+            <label htmlFor="email" className="form-label fw-bolder mt-5 text-warning">
               Email address*
             </label>
             <input
@@ -51,9 +51,9 @@ const LoginForm = () => {
               onBlur={handleBlur}
               value={values.email}
             />
-            <h3>{errors.email && touched.email && errors.email}</h3>
+            <h3 className="text-warning">{errors.email && touched.email && errors.email}</h3>
 
-            <label htmlFor="password" className="form-label fw-bolder">
+            <label htmlFor="password" className="form-label fw-bolder text-warning">
               Password*
             </label>
             <input
@@ -64,11 +64,11 @@ const LoginForm = () => {
               onBlur={handleBlur}
               value={values.password}
             />
-            <h3>{errors.password && touched.password && errors.password}</h3>
+            <h3 className="text-warning">{errors.password && touched.password && errors.password}</h3>
 
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-warning "
               disabled={isSubmitting}
             >
               Login
