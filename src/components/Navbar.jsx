@@ -39,7 +39,7 @@ const Navbar = () => {
           </NavLink> }
                
           {!user? <NavLink className="nav-link text-white fs-4 " to="/login">
-            LOGİN
+            LOGIN
           </NavLink> :<p className="nav-link text-white fs-4 " role="button" onClick={()=>logout()}>
             LOGOUT
           </p>}   

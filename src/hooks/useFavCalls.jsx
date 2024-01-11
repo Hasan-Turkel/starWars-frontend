@@ -20,7 +20,7 @@ const userFavCalls = () => {
       // console.log(data);
     } catch (error) {
       // console.log(error.message);
-      toastErrorNotify("Adding failed.")
+      toastErrorNotify(error.response.data.message)
     }
   };
 

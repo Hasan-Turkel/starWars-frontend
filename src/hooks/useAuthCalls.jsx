@@ -19,7 +19,7 @@ const useAuthCalls = () => {
     } catch (error) {
       // console.log(error.message);
       dispatch(fetchFail());
-      toastErrorNotify("Login failed")
+      toastErrorNotify(error.response.data.message)
     }
   };
 
@@ -34,7 +34,7 @@ const useAuthCalls = () => {
     } catch (error) {
       // console.log(error);
       dispatch(fetchFail());
-      toastErrorNotify("Register failed")
+      toastErrorNotify(error.response.data.message)
     }
   };
   const logout = async () => {

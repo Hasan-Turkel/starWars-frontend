@@ -5,7 +5,7 @@ import Loading from "../components/Loading";
 import useFavCalls from "../hooks/useFavCalls";
 
 const Planet = () => {
-  const { sendFav } = useFavCalls()
+  const { sendFav } = useFavCalls();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -51,10 +51,16 @@ const Planet = () => {
             Terrain : {planet?.terrain?.toUpperCase()}
           </h4>
           <h4 className="nav-link fs-4">Population : {planet?.population}</h4>
-          <button className=" btn btn-dark text-warning mx-2" onClick={() => navigate(-1)}>
+          <button
+            className=" btn btn-dark text-warning mx-2"
+            onClick={() => navigate(-1)}
+          >
             Go Back
           </button>
-          <button className=" btn btn-warning" onClick={() => sendFav({key:"planets", planet})}>
+          <button
+            className=" btn btn-warning"
+            onClick={() => sendFav({ key: "planets", planet })}
+          >
             Add to Favorites
           </button>
         </div>
