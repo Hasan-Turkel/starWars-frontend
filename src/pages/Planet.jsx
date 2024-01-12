@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
 import useFavCalls from "../hooks/useFavCalls";
+import { useSelector } from "react-redux";
 
 const Planet = () => {
+  const {user} = useSelector((state)=>state.auth)
   const { sendFav } = useFavCalls();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -59,7 +61,7 @@ const Planet = () => {
           </button>
           <button
             className=" btn btn-warning"
-            onClick={() => sendFav({ key: "planets", planet })}
+            onClick={() => user? sendFav({ key: "planets", planet }): navigate("/login")}
           >
             Add to Favorites
           </button>
