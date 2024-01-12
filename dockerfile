@@ -8,7 +8,7 @@ COPY . .
 RUN npm i -g pnpm
 RUN pnpm i
 
-CMD ["npm", "start"]
+CMD ["pnpm", "start"]
 EXPOSE 5173
 
 # --------------------------------
