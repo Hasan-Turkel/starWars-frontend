@@ -10,7 +10,7 @@ const userFavCalls = () => {
 
   const sendFav = async (values) => {
 
-    console.log(values);
+    // console.log(values);
 
     try {
       const { data } = await axiosWithToken.put(`/users/${user._id}/`, values, 

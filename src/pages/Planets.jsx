@@ -28,7 +28,7 @@ const Planets = () => {
         `${import.meta.env.VITE_BASE_URL}/planets/?page=${number}`
       );
       setPlanets(data);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       // console.log(error);
     } finally {
