@@ -11,11 +11,7 @@ StarWarsApp is a project that you can see planets and characters of Star Wars mo
         alt="home.jpg"
         width ="200px"
       />
-<img
-        src="./dashboard.jpg"
-        alt="dashboard.jpg"
-        width ="200px"
-      />
+
 <img
         src="./planets.jpg"
         alt="planets.jpg"
